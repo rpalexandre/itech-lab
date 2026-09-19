@@ -5,22 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iTech Lab | Assistive Technology & Applied Computing - IFSP</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .lang-pt { display: none; }
+    body.show-pt .lang-en { display: none; }
+    body.show-pt .lang-pt { display: block; }
+    body.show-pt span.lang-pt, body.show-pt a.lang-pt { display: inline; }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-  <!-- Header Institucional -->
+  <!-- Header Institucional com Seletor de Idioma -->
   <header class="bg-slate-900 text-white border-b border-slate-700 py-10 px-6">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
       <div>
-        <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Academic Research Laboratory</span>
-        <h1 class="text-3xl font-bold mt-1">iTech - Assistive Technology & Applied Computing Lab</h1>
-        <p class="text-slate-300 text-sm mt-1">
+        <div class="flex items-center gap-3">
+          <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold lang-en">Academic Research Laboratory</span>
+          <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold lang-pt">Laboratório de Pesquisa Acadêmica</span>
+          
+          <!-- Botão Seletor de Idioma -->
+          <div class="inline-flex rounded-md shadow-sm bg-slate-800 p-0.5 border border-slate-700 text-xs">
+            <button id="btn-en" onclick="setLang('en')" class="px-2 py-0.5 rounded bg-emerald-600 text-white font-bold transition">EN</button>
+            <button id="btn-pt" onclick="setLang('pt')" class="px-2 py-0.5 rounded text-slate-400 font-medium hover:text-white transition">PT</button>
+          </div>
+        </div>
+
+        <h1 class="text-3xl font-bold mt-1 lang-en">iTech - Assistive Technology & Applied Computing Lab</h1>
+        <h1 class="text-3xl font-bold mt-1 lang-pt">iTech - Grupo de Pesquisa em Tecnologias Assistivas</h1>
+
+        <p class="text-slate-300 text-sm mt-1 lang-en">
           Federal Institute of Education, Science and Technology of São Paulo (IFSP) &bull; Campus Birigui
         </p>
+        <p class="text-slate-300 text-sm mt-1 lang-pt">
+          Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) &bull; Campus Birigui
+        </p>
       </div>
+
       <div class="text-xs text-slate-400 md:text-right border-t md:border-t-0 pt-2 md:pt-0 border-slate-700">
-        <p class="font-medium text-slate-300">CNPq Certified Research Group</p>
-        <p>Ministry of Education (MEC), Brazil</p>
+        <p class="font-medium text-slate-300 lang-en">CNPq Certified Research Group</p>
+        <p class="font-medium text-slate-300 lang-pt">Grupo de Pesquisa Certificado pelo CNPq</p>
+        <p class="lang-en">Ministry of Education (MEC), Brazil</p>
+        <p class="lang-pt">Ministério da Educação (MEC), Brasil</p>
       </div>
     </div>
   </header>
@@ -32,19 +56,27 @@
     <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
       <div class="space-y-4">
         <div class="inline-block bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold">
-          Principal Investigator (PI) & Lab Director
+          <span class="lang-en">Principal Investigator (PI) & Lab Director</span>
+          <span class="lang-pt">Pesquisador Responsável (Líder do Grupo)</span>
         </div>
         <h2 class="text-2xl font-bold text-slate-900">Prof. Dr. Rogério Pinto Alexandre</h2>
-        <p class="text-slate-600 text-sm leading-relaxed">
+        
+        <p class="text-slate-600 text-sm leading-relaxed lang-en">
           Full Professor (Professor Titular) in Information Technology and Computer Systems at IFSP Campus Birigui. 
           Ph.D. in Energy in Agriculture (UNESP) focusing on Applied Computing, Embedded Architectures, 
           Internet of Things (IoT), Assistive Technologies, and Healthcare Information Systems.
+        </p>
+        <p class="text-slate-600 text-sm leading-relaxed lang-pt">
+          Professor Titular na área de Tecnologia da Informação e Sistemas Computacionais no IFSP Campus Birigui. 
+          Doutor em Energia na Agricultura (UNESP) com atuação em Computação Aplicada, Arquiteturas Embarcadas, 
+          Internet das Coisas (IoT), Tecnologias Assistivas e Sistemas de Apoio à Saúde.
         </p>
 
         <!-- Links Oficiais de Validação Cruzada -->
         <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm border-t border-slate-100">
           <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700">Institutional Email:</span>
+            <span class="font-semibold text-slate-700 lang-en">Institutional Email:</span>
+            <span class="font-semibold text-slate-700 lang-pt">E-mail Institucional:</span>
             <a href="mailto:rpalexandre@ifsp.edu.br" class="text-blue-600 hover:underline">rpalexandre@ifsp.edu.br</a>
           </div>
           <div class="flex items-center gap-2">
@@ -52,16 +84,19 @@
             <a href="https://orcid.org/0000-0002-2281-2590" target="_blank" rel="noopener" class="text-blue-600 hover:underline">0000-0002-2281-2590</a>
           </div>
           <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700">Curriculum Lattes:</span>
+            <span class="font-semibold text-slate-700 lang-en">Curriculum Lattes:</span>
+            <span class="font-semibold text-slate-700 lang-pt">Currículo Lattes:</span>
             <a href="https://lattes.cnpq.br/3980407261409241" target="_blank" rel="noopener" class="text-blue-600 hover:underline">3980407261409241 (CNPq)</a>
           </div>
           <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700">CNPq DGP Mirror:</span>
+            <span class="font-semibold text-slate-700 lang-en">CNPq DGP Mirror:</span>
+            <span class="font-semibold text-slate-700 lang-pt">Espelho DGP/CNPq:</span>
             <a href="http://dgp.cnpq.br/dgp/espelhorh/3980407261409241" target="_blank" rel="noopener" class="text-blue-600 hover:underline">DGP Research Group Record</a>
           </div>
           <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700">Official Faculty Directory:</span>
-            <a href="https://bri.ifsp.edu.br/index.php/docentes" target="_blank" rel="noopener" class="text-blue-600 hover:underline">IFSP Faculty Registry (CEC-BRI)</a>
+            <span class="font-semibold text-slate-700 lang-en">Faculty Registry:</span>
+            <span class="font-semibold text-slate-700 lang-pt">Corpo Docente IFSP:</span>
+            <a href="https://bri.ifsp.edu.br/index.php/docentes" target="_blank" rel="noopener" class="text-blue-600 hover:underline">IFSP Faculty Directory (CEC-BRI)</a>
           </div>
         </div>
       </div>
@@ -69,37 +104,56 @@
 
     <!-- Escopo de Pesquisa do Laboratório -->
     <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-4">
-      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">About the Lab & Research Scope</h3>
-      <p class="text-slate-600 text-sm leading-relaxed">
+      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-en">About the Lab & Research Scope</h3>
+      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-pt">Sobre o Grupo e Linhas de Pesquisa</h3>
+
+      <p class="text-slate-600 text-sm leading-relaxed lang-en">
         The <strong>iTech Research Lab (Grupo de Pesquisa em Tecnologias Assistivas)</strong> is an academic research laboratory certified by the National Council for Scientific and Technological Development (CNPq) and hosted at the Federal Institute of São Paulo (IFSP). 
         The laboratory investigates assistive digital technologies, embedded systems, Internet of Things (IoT), and applied computing solutions designed to promote social inclusion, accessibility, and healthcare support.
+      </p>
+      <p class="text-slate-600 text-sm leading-relaxed lang-pt">
+        O <strong>iTech (Grupo de Pesquisa em Tecnologias Assistivas)</strong> é um grupo de pesquisa acadêmica certificado pelo CNPq e sediado no Instituto Federal de São Paulo (IFSP - Campus Birigui). 
+        O laboratório desenvolve projetos de pesquisa e extensão em tecnologias assistivas, sistemas embarcados, Internet das Coisas (IoT) e computação aplicada voltada à inclusão social e saúde.
       </p>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
         <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1">Assistive & Inclusive Tech</h4>
-          <p class="text-xs text-slate-600">Smart devices, accessibility software, cognitive evaluation tools, and digital solutions for health informatics.</p>
+          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Assistive & Inclusive Tech</h4>
+          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Tecnologias Assistivas</h4>
+          <p class="text-xs text-slate-600 lang-en">Smart devices, accessibility software, cognitive evaluation tools, and digital solutions for health informatics.</p>
+          <p class="text-xs text-slate-600 lang-pt">Dispositivos inteligentes, softwares de acessibilidade, avaliação cognitiva e informática em saúde.</p>
         </div>
         <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1">IoT & Sensor Networks</h4>
-          <p class="text-xs text-slate-600">Telemetry architectures, microcontrollers, RFID sensor systems, and real-time distributed data acquisition.</p>
+          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">IoT & Sensor Networks</h4>
+          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">IoT e Redes de Sensores</h4>
+          <p class="text-xs text-slate-600 lang-en">Telemetry architectures, microcontrollers, RFID sensor systems, and real-time distributed data acquisition.</p>
+          <p class="text-xs text-slate-600 lang-pt">Sistemas de telemetria, microcontroladores, RFID e aquisição de dados distribuídos em tempo real.</p>
         </div>
         <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1">Applied AI & Modeling</h4>
-          <p class="text-xs text-slate-600">Applied machine intelligence for biological signal processing, educational technology, and automated evaluation workflows.</p>
+          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Applied AI & Modeling</h4>
+          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">IA Aplicada e Modelagem</h4>
+          <p class="text-xs text-slate-600 lang-en">Applied machine intelligence for biological signal processing, educational technology, and automated evaluation workflows.</p>
+          <p class="text-xs text-slate-600 lang-pt">Inteligência computacional aplicada a sinais biológicos, tecnologia educacional e automação.</p>
         </div>
       </div>
     </section>
 
-    <!-- Membros e Estudantes Orientados (Dados Oficiais DGP/CNPq) -->
+    <!-- Membros e Estudantes Orientados -->
     <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-6">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 border-b border-slate-100 pb-3">
-        <h3 class="text-xl font-bold text-slate-900">Supervised Student Researchers</h3>
-        <span class="text-xs bg-emerald-100 text-emerald-800 font-medium px-2.5 py-1 rounded-md">CNPq DGP Certified Mentorship</span>
+        <h3 class="text-xl font-bold text-slate-900 lang-en">Supervised Student Researchers</h3>
+        <h3 class="text-xl font-bold text-slate-900 lang-pt">Estudantes Orientados no Grupo de Pesquisa</h3>
+
+        <span class="text-xs bg-emerald-100 text-emerald-800 font-medium px-2.5 py-1 rounded-md lang-en">CNPq DGP Certified Mentorship</span>
+        <span class="text-xs bg-emerald-100 text-emerald-800 font-medium px-2.5 py-1 rounded-md lang-pt">Certificação DGP / CNPq</span>
       </div>
 
-      <p class="text-sm text-slate-600">
+      <p class="text-sm text-slate-600 lang-en">
         The following students are actively supervised by the Principal Investigator within the 
+        <strong>iTech - Grupo de Pesquisa em Tecnologias Assistivas</strong> (IFSP / CNPq):
+      </p>
+      <p class="text-sm text-slate-600 lang-pt">
+        Estudantes vinculados e orientados pelo pesquisador no âmbito do 
         <strong>iTech - Grupo de Pesquisa em Tecnologias Assistivas</strong> (IFSP / CNPq):
       </p>
 
@@ -107,105 +161,151 @@
         <table class="w-full text-left text-sm">
           <thead class="bg-slate-100 text-slate-700 text-xs uppercase font-semibold">
             <tr>
-              <th class="py-3 px-4">Student Researcher</th>
-              <th class="py-3 px-4">Academic Level</th>
-              <th class="py-3 px-4">Research Group & Host Institution</th>
+              <th class="py-3 px-4 lang-en">Student Researcher</th>
+              <th class="py-3 px-4 lang-pt">Estudante</th>
+
+              <th class="py-3 px-4 lang-en">Academic Level</th>
+              <th class="py-3 px-4 lang-pt">Nível de Treinamento</th>
+
+              <th class="py-3 px-4 lang-en">Research Group & Host Institution</th>
+              <th class="py-3 px-4 lang-pt">Grupo de Pesquisa e Instituição</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Fabricio Malta de Oliveira</td>
-              <td class="py-3 px-4 text-slate-500">Student Researcher</td>
+              <td class="py-3 px-4 text-slate-500"><span class="lang-en">Student Researcher</span><span class="lang-pt">Estudante Pesquisador</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Willian Gustavo Rocha Leme</td>
-              <td class="py-3 px-4 font-medium text-emerald-700">Undergraduate (Graduação)</td>
+              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate (Graduação)</span><span class="lang-pt">Graduação</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">João Victor do Nascimento Secate</td>
-              <td class="py-3 px-4 font-medium text-emerald-700">Undergraduate (Graduação)</td>
+              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate (Graduação)</span><span class="lang-pt">Graduação</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Renã Garcia</td>
-              <td class="py-3 px-4 font-medium text-emerald-700">Undergraduate (Graduação)</td>
+              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate (Graduação)</span><span class="lang-pt">Graduação</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Igor Solfa Romero</td>
-              <td class="py-3 px-4 font-medium text-emerald-700">Undergraduate (Graduação)</td>
+              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate (Graduação)</span><span class="lang-pt">Graduação</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Katherine Suely Hideko Kuano Sawaeda</td>
-              <td class="py-3 px-4 text-slate-500">Student Researcher</td>
+              <td class="py-3 px-4 text-slate-500"><span class="lang-en">Student Researcher</span><span class="lang-pt">Estudante Pesquisadora</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Matheus Vinicius Silva dos Santos</td>
-              <td class="py-3 px-4 font-medium text-emerald-700">Undergraduate (Graduação)</td>
+              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate (Graduação)</span><span class="lang-pt">Graduação</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Reynold Navarro Mazo</td>
-              <td class="py-3 px-4 font-medium text-emerald-700">Undergraduate (Graduação)</td>
+              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate (Graduação)</span><span class="lang-pt">Graduação</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
             <tr>
               <td class="py-3 px-4 font-semibold text-slate-900">Pedro Henrique Ton Pauletti</td>
-              <td class="py-3 px-4 text-slate-500">Student Researcher</td>
+              <td class="py-3 px-4 text-slate-500"><span class="lang-en">Student Researcher</span><span class="lang-pt">Estudante Pesquisador</span></td>
               <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="text-[11px] text-slate-400 italic">
+      <p class="text-[11px] text-slate-400 italic lang-en">
         * Official registry extracted directly from the CNPq Directory of Research Groups (DGP).
+      </p>
+      <p class="text-[11px] text-slate-400 italic lang-pt">
+        * Registros oficiais extraídos diretamente do Diretório dos Grupos de Pesquisa no Brasil (DGP / CNPq).
       </p>
     </section>
 
-    <!-- Publicações e Produção Científica -->
+    <!-- Publicações Selecionadas -->
     <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-4">
-      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Selected Publications & Academic Output</h3>
+      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-en">Selected Publications & Academic Output</h3>
+      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-pt">Publicações Selecionadas e Produção Acadêmica</h3>
+
       <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
-        <p>
+        <p class="lang-en">
           The laboratory regularly publishes peer-reviewed research in peer-reviewed journals, symposium proceedings, and scientific congresses across applied computing and engineering. Main topics include:
         </p>
-        <ul class="list-disc list-inside space-y-2 pl-1">
+        <p class="lang-pt">
+          O grupo publica continuamente pesquisas revisadas por pares em periódicos, anais de congressos e simpósios científicos nas áreas de computação aplicada e engenharia:
+        </p>
+
+        <ul class="space-y-2 pl-1 list-disc list-inside">
           <li>
-            <span class="font-semibold text-slate-900">Assistive Systems & Health Informatics:</span> Investigations into software usability, cognitive diagnostic support, and smart accessibility interfaces for vulnerable populations.
+            <strong class="text-slate-900 lang-en">Assistive Systems & Health Informatics:</strong>
+            <strong class="text-slate-900 lang-pt">Sistemas Assistivos e Informática em Saúde:</strong>
+            <span class="lang-en">Investigations into software usability, cognitive diagnostic support, and smart accessibility interfaces.</span>
+            <span class="lang-pt">Estudos em usabilidade, apoio a diagnósticos cognitivos e interfaces de acessibilidade inteligente.</span>
           </li>
           <li>
-            <span class="font-semibold text-slate-900">IoT Telemetry & Embedded Architectures:</span> Real-time sensor acquisition, microcontroller design, and distributed networks for environmental and industrial monitoring.
+            <strong class="text-slate-900 lang-en">IoT Telemetry & Embedded Architectures:</strong>
+            <strong class="text-slate-900 lang-pt">Telemetria IoT e Arquiteturas Embarcadas:</strong>
+            <span class="lang-en">Real-time sensor acquisition, microcontroller design, and distributed networks for monitoring.</span>
+            <span class="lang-pt">Aquisição de dados por sensores em tempo real, nós microcontrolados e redes distribuídas para monitoramento.</span>
           </li>
           <li>
-            <span class="font-semibold text-slate-900">Student Co-Authored Works:</span> Applied technological development papers authored jointly with supervised undergraduate research fellows (PIBIC/PIBITI).
+            <strong class="text-slate-900 lang-en">Student Co-Authored Works:</strong>
+            <strong class="text-slate-900 lang-pt">Trabalhos em Coautoria com Orientandos:</strong>
+            <span class="lang-en">Applied technological development papers authored jointly with supervised undergraduate fellows.</span>
+            <span class="lang-pt">Produção técnica e científica desenvolvida em conjunto com bolsistas de Iniciação Científica (PIBIC/PIBITI).</span>
           </li>
         </ul>
+
         <div class="pt-3 border-t border-slate-100 text-slate-500">
-          For the complete and updated list of indexed peer-reviewed journal articles, conference papers, and patents, consult the official registries:
-          <span class="inline-flex gap-3 mt-1 block">
-            <a href="https://orcid.org/0000-0002-2281-2590" target="_blank" rel="noopener" class="text-blue-600 font-medium hover:underline">&rarr; Verified ORCID Profile</a>
-            <a href="https://lattes.cnpq.br/3980407261409241" target="_blank" rel="noopener" class="text-blue-600 font-medium hover:underline">&rarr; CNPq Lattes Curriculum</a>
-          </span>
+          <span class="lang-en">For the complete list of publications, patents, and scientific contributions:</span>
+          <span class="lang-pt">Para o catálogo completo de publicações, patentes e produções técnicas:</span>
+          <div class="flex gap-4 mt-1">
+            <a href="https://orcid.org/0000-0002-2281-2590" target="_blank" rel="noopener" class="text-blue-600 font-medium hover:underline">&rarr; ORCID Profile</a>
+            <a href="https://lattes.cnpq.br/3980407261409241" target="_blank" rel="noopener" class="text-blue-600 font-medium hover:underline">&rarr; Currículo Lattes</a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Certificação Institucional -->
     <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-4">
-      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3">Institutional Certification & National Recognition</h3>
+      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-en">Institutional Certification & Accreditation</h3>
+      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-pt">Certificação Institucional e Reconhecimento</h3>
+
       <div class="space-y-3 text-sm text-slate-600">
-        <p>
+        <p class="lang-en">
           The group operates under official institutional certification by the <strong>Pró-Reitoria de Pesquisa e Pós-Graduação (PRP / IFSP)</strong> and the <strong>National Council for Scientific and Technological Development (CNPq)</strong>.
         </p>
+        <p class="lang-pt">
+          O grupo possui certificação institucional oficial homologada pela <strong>Pró-Reitoria de Pesquisa e Pós-Graduação (PRP / IFSP)</strong> e pelo <strong>Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)</strong>.
+        </p>
+
         <ul class="list-disc list-inside space-y-1.5 pt-1 text-slate-700 text-xs">
-          <li><strong>Host Academic Institution:</strong> Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP), Câmpus Birigui.</li>
-          <li><strong>Institutional Accreditation:</strong> Certified by the Dean of Research and Graduate Studies (PRP - IFSP).</li>
-          <li><strong>CNPq DGP Classification:</strong> Assistive Technologies, Applied Computing & Computer Systems.</li>
-          <li><strong>Supervisory Oversight:</strong> Direct advising of scientific initiation fellows, technological development, and capstone theses.</li>
+          <li>
+            <strong class="lang-en">Host Academic Institution:</strong><strong class="lang-pt">Instituição de Ensino Sede:</strong>
+            Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP), Câmpus Birigui.
+          </li>
+          <li>
+            <strong class="lang-en">Institutional Accreditation:</strong><strong class="lang-pt">Homologação Institucional:</strong>
+            <span class="lang-en">Certified by the Dean of Research and Graduate Studies (PRP - IFSP).</span>
+            <span class="lang-pt">Certificado pela Pró-Reitoria de Pesquisa e Pós-Graduação (PRP - IFSP).</span>
+          </li>
+          <li>
+            <strong class="lang-en">CNPq DGP Classification:</strong><strong class="lang-pt">Classificação no DGP / CNPq:</strong>
+            <span class="lang-en">Assistive Technologies, Applied Computing & Computer Systems.</span>
+            <span class="lang-pt">Tecnologias Assistivas, Computação Aplicada e Sistemas de Computação.</span>
+          </li>
+          <li>
+            <strong class="lang-en">Supervisory Oversight:</strong><strong class="lang-pt">Atividade de Orientação:</strong>
+            <span class="lang-en">Direct advising of scientific initiation fellows, technological development, and capstone theses.</span>
+            <span class="lang-pt">Supervisão de bolsistas de Iniciação Científica (PIBIC/PIBITI), TCCs e desenvolvimento tecnológico.</span>
+          </li>
         </ul>
       </div>
     </section>
@@ -216,6 +316,24 @@
   <footer class="text-center text-xs text-slate-500 py-8 border-t border-slate-200">
     &copy; iTech Research Lab &bull; IFSP Campus Birigui &bull; São Paulo, Brazil
   </footer>
+
+  <!-- Script de Alternância de Idioma (Padrão: EN) -->
+  <script>
+    function setLang(lang) {
+      const btnEn = document.getElementById('btn-en');
+      const btnPt = document.getElementById('btn-pt');
+
+      if (lang === 'pt') {
+        document.body.classList.add('show-pt');
+        btnPt.className = 'px-2 py-0.5 rounded bg-emerald-600 text-white font-bold transition';
+        btnEn.className = 'px-2 py-0.5 rounded text-slate-400 font-medium hover:text-white transition';
+      } else {
+        document.body.classList.remove('show-pt');
+        btnEn.className = 'px-2 py-0.5 rounded bg-emerald-600 text-white font-bold transition';
+        btnPt.className = 'px-2 py-0.5 rounded text-slate-400 font-medium hover:text-white transition';
+      }
+    }
+  </script>
 
 </body>
 </html>
