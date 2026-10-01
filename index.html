@@ -14,7 +14,7 @@
 
     /* Quando ativada a classe .show-en no body: exibe Inglês (EN) e oculta Português (PT) */
     body.show-en .lang-pt { display: none !important; }
-    body.show-en .lang-en { display: block; }
+    body.show-en .lang-en { display: block !important; }
     body.show-en span.lang-en, body.show-en a.lang-en, body.show-en strong.lang-en { display: inline !important; }
     body.show-en th.lang-en, body.show-en td.lang-en { display: table-cell !important; }
   </style>
@@ -126,32 +126,52 @@
       </p>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+        <!-- Linha 1 -->
         <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Tecnologias Assistivas e Acessibilidade</h4>
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Assistive Technologies & Accessibility</h4>
-          <p class="text-xs text-slate-600 lang-pt">Concepção de dispositivos eletrônicos e sistemas computacionais para inclusão digital, comunicação suplementar e auxílio a pessoas com necessidades específicas.</p>
-          <p class="text-xs text-slate-600 lang-en">Design of electronic hardware and computational frameworks for digital inclusion, augmentative communication, and functional support for individuals with specific needs.</p>
+          <div class="lang-pt">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Tecnologias Assistivas e Acessibilidade</h4>
+            <p class="text-xs text-slate-600">Concepção de dispositivos eletrônicos e sistemas computacionais para inclusão digital, comunicação suplementar e auxílio a pessoas com necessidades específicas.</p>
+          </div>
+          <div class="lang-en">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Assistive Technologies & Accessibility</h4>
+            <p class="text-xs text-slate-600">Design of electronic hardware and computational frameworks for digital inclusion, augmentative communication, and functional support for individuals with specific needs.</p>
+          </div>
         </div>
 
+        <!-- Linha 2 -->
         <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Internet das Coisas (IoT) e Monitoramento</h4>
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Internet of Things (IoT) & Monitoring</h4>
-          <p class="text-xs text-slate-600 lang-pt">Desenvolvimento de arquiteturas baseadas em microcontroladores, sensoriamento remoto, telemetria em tempo real e automação de ambientes inteligentes.</p>
-          <p class="text-xs text-slate-600 lang-en">Development of microcontroller-based architectures, remote sensing, real-time telemetry, and smart environment automation.</p>
+          <div class="lang-pt">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Internet das Coisas (IoT) e Monitoramento</h4>
+            <p class="text-xs text-slate-600">Desenvolvimento de arquiteturas baseadas em microcontroladores, sensoriamento remoto, telemetria em tempo real e automação de ambientes inteligentes.</p>
+          </div>
+          <div class="lang-en">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Internet of Things (IoT) & Monitoring</h4>
+            <p class="text-xs text-slate-600">Development of microcontroller-based architectures, remote sensing, real-time telemetry, and smart environment automation.</p>
+          </div>
         </div>
 
+        <!-- Linha 3 -->
         <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Redes de Computadores e Automação Industrial</h4>
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Computer Networks & Industrial Automation</h4>
-          <p class="text-xs text-slate-600 lang-pt">Protocolos de comunicação, redes de campo industriais, sistemas supervisórios (SCADA), integração hardware-software e controle distribuído.</p>
-          <p class="text-xs text-slate-600 lang-en">Industrial communication protocols, fieldbus networks, SCADA systems, hardware-software integration, and distributed control.</p>
+          <div class="lang-pt">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Redes de Computadores e Automação Industrial</h4>
+            <p class="text-xs text-slate-600">Protocolos de comunicação, redes de campo industriais, sistemas supervisórios (SCADA), integração hardware-software e controle distribuído.</p>
+          </div>
+          <div class="lang-en">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Computer Networks & Industrial Automation</h4>
+            <p class="text-xs text-slate-600">Industrial communication protocols, fieldbus networks, SCADA systems, hardware-software integration, and distributed control.</p>
+          </div>
         </div>
 
+        <!-- Linha 4 -->
         <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Realidade Virtual e Ambientes Imersivos</h4>
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Virtual Reality & Immersive Systems</h4>
-          <p class="text-xs text-slate-600 lang-pt">Aplicações imersivas interativas voltadas para simulação, capacitação técnica e apoio a processos terapêuticos e educativos.</p>
-          <p class="text-xs text-slate-600 lang-en">Interactive immersive software engineered for realistic simulation, technical training, and therapeutic support environments.</p>
+          <div class="lang-pt">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Realidade Virtual e Ambientes Imersivos</h4>
+            <p class="text-xs text-slate-600">Aplicações imersivas interativas voltadas para simulação, capacitação técnica e apoio a processos terapêuticos e educativos.</p>
+          </div>
+          <div class="lang-en">
+            <h4 class="font-semibold text-slate-800 text-sm mb-1">Virtual Reality & Immersive Systems</h4>
+            <p class="text-xs text-slate-600">Interactive immersive software engineered for realistic simulation, technical training, and therapeutic support environments.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -162,73 +182,97 @@
       <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-en">Featured Research Projects</h3>
 
       <div class="space-y-3">
+        <!-- Projeto 1 -->
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
-          <div class="flex justify-between items-start gap-2">
-            <h4 class="text-sm font-semibold text-slate-900">
-              <span class="lang-pt">Monitoramento de Funções Cognitivas e Saúde via IoT</span>
-              <span class="lang-en">Cognitive Function Monitoring & Healthcare via IoT</span>
-            </h4>
-            <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">IoT / Healthcare</span>
+          <div class="lang-pt">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Monitoramento de Funções Cognitivas e Saúde via IoT</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">IoT / Healthcare</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Desenvolvimento de plataformas baseadas em sensores conectados e IoT para acompanhamento de rotinas, avaliação de parâmetros motores e suporte ao monitoramento de alterações cognitivas.
+            </p>
           </div>
-          <p class="text-xs text-slate-600 mt-1 lang-pt">
-            Desenvolvimento de plataformas baseadas em sensores conectados e IoT para acompanhamento de rotinas, avaliação de parâmetros motores e suporte ao monitoramento de alterações cognitivas.
-          </p>
-          <p class="text-xs text-slate-600 mt-1 lang-en">
-            Development of connected sensor architectures and IoT platforms for activity tracking, motor parameter evaluation, and cognitive condition assessment.
-          </p>
+          <div class="lang-en">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Cognitive Function Monitoring & Healthcare via IoT</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">IoT / Healthcare</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Development of connected sensor architectures and IoT platforms for activity tracking, motor parameter evaluation, and cognitive condition assessment.
+            </p>
+          </div>
         </div>
 
+        <!-- Projeto 2 -->
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
-          <div class="flex justify-between items-start gap-2">
-            <h4 class="text-sm font-semibold text-slate-900">
-              <span class="lang-pt">Ambientes de Realidade Virtual para Baixa Visão</span>
-              <span class="lang-en">Virtual Reality Environments for Low Vision Support</span>
-            </h4>
-            <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">VR / Accessibility</span>
+          <div class="lang-pt">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Ambientes de Realidade Virtual para Baixa Visão</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">VR / Accessibility</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Investigação e prototipagem de cenários imersivos de Realidade Virtual com alto contraste e estímulos dimensionados para apoio à mobilidade e autonomia de pessoas com baixa visão.
+            </p>
           </div>
-          <p class="text-xs text-slate-600 mt-1 lang-pt">
-            Investigação e prototipagem de cenários imersivos de Realidade Virtual com alto contraste e estímulos dimensionados para apoio à mobilidade e autonomia de pessoas com baixa visão.
-          </p>
-          <p class="text-xs text-slate-600 mt-1 lang-en">
-            Investigation and prototyping of immersive high-contrast VR environments designed to improve spatial orientation and autonomy for individuals with low vision.
-          </p>
+          <div class="lang-en">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Virtual Reality Environments for Low Vision Support</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">VR / Accessibility</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Investigation and prototyping of immersive high-contrast VR environments designed to improve spatial orientation and autonomy for individuals with low vision.
+            </p>
+          </div>
         </div>
 
+        <!-- Projeto 3 -->
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
-          <div class="flex justify-between items-start gap-2">
-            <h4 class="text-sm font-semibold text-slate-900">
-              <span class="lang-pt">Identificação e Rastreamento Aplicado (RFID / Sensores)</span>
-              <span class="lang-en">Applied Identification & Tracking (RFID & Sensors)</span>
-            </h4>
-            <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Instrumentation</span>
+          <div class="lang-pt">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Identificação e Rastreamento Aplicado (RFID / Sensores)</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Instrumentation</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Estudo e implantação de tecnologias RFID e sensoriamento para automação de processos, identificação assistiva e gestão de dispositivos em ambientes controlados.
+            </p>
           </div>
-          <p class="text-xs text-slate-600 mt-1 lang-pt">
-            Estudo e implantação de tecnologias RFID e sensoriamento para automação de processos, identificação assistiva e gestão de dispositivos em ambientes controlados.
-          </p>
-          <p class="text-xs text-slate-600 mt-1 lang-en">
-            Analysis and implementation of RFID and sensor infrastructures for process automation, assistive identification, and controlled asset management.
-          </p>
+          <div class="lang-en">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Applied Identification & Tracking (RFID & Sensors)</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Instrumentation</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Analysis and implementation of RFID and sensor infrastructures for process automation, assistive identification, and controlled asset management.
+            </p>
+          </div>
         </div>
 
+        <!-- Projeto 4 -->
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
-          <div class="flex justify-between items-start gap-2">
-            <h4 class="text-sm font-semibold text-slate-900">
-              <span class="lang-pt">Dispositivos Microcontrolados para Inclusão e Acessibilidade</span>
-              <span class="lang-en">Embedded Microcontrolled Assistive Devices</span>
-            </h4>
-            <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Embedded Systems</span>
+          <div class="lang-pt">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Dispositivos Microcontrolados para Inclusão e Acessibilidade</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Embedded Systems</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Construção de interfaces físicas acessíveis, adaptações ergométricas e sistemas embarcados para facilitação da comunicação e autonomia pessoal.
+            </p>
           </div>
-          <p class="text-xs text-slate-600 mt-1 lang-pt">
-            Construção de interfaces físicas acessíveis, adaptações ergométricas e sistemas embarcados para facilitação da comunicação e autonomia pessoal.
-          </p>
-          <p class="text-xs text-slate-600 mt-1 lang-en">
-            Prototyping accessible physical user interfaces, ergonomic adaptations, and embedded controllers to foster independence in daily tasks.
-          </p>
+          <div class="lang-en">
+            <div class="flex justify-between items-start gap-2">
+              <h4 class="text-sm font-semibold text-slate-900">Embedded Microcontrolled Assistive Devices</h4>
+              <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Embedded Systems</span>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
+              Prototyping accessible physical user interfaces, ergonomic adaptations, and embedded controllers to foster independence in daily tasks.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Membros e Estudantes Orientados (Tabela com Títulos Alinhados em Linha Única) -->
+    <!-- Membros e Estudantes Orientados -->
     <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-6">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 border-b border-slate-100 pb-3">
         <h3 class="text-xl font-bold text-slate-900 lang-pt">Pesquisadores e Estudantes Orientados</h3>
