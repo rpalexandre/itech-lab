@@ -159,22 +159,53 @@
     .card {
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 1rem;
+      padding: 1.1rem;
       background: #fafafa;
     }
 
     .card h4 {
       color: var(--secondary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
-    ul {
-      list-style-position: inside;
-      margin-left: 0.5rem;
+    .project-item {
+      border-left: 3px solid var(--secondary);
+      padding-left: 1rem;
+      margin-bottom: 1.25rem;
     }
 
-    li {
-      margin-bottom: 0.5rem;
+    .project-item h4 {
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+      font-size: 1.05rem;
+    }
+
+    .student-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .student-badge {
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.65rem 0.85rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .student-name {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    .student-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
     }
 
     footer {
@@ -205,13 +236,13 @@
     <!-- Cabeçalho PT -->
     <div id="header-pt" class="lang-content active">
       <h1>iTech Research Lab</h1>
-      <p>Grupo de Pesquisa e Desenvolvimento em Tecnologias Assistivas, Internet das Coisas e Sistemas Inteligentes</p>
+      <p>Grupo de Pesquisa e Desenvolvimento em Tecnologias Assistivas, Internet das Coisas e Automação</p>
     </div>
 
     <!-- Cabeçalho EN -->
     <div id="header-en" class="lang-content">
       <h1>iTech Research Lab</h1>
-      <p>Research and Development Group in Assistive Technologies, Internet of Things, and Intelligent Systems</p>
+      <p>Research and Development Group in Assistive Technologies, Internet of Things, and Automation</p>
     </div>
   </header>
 
@@ -244,36 +275,95 @@
 
       <!-- Linhas de Pesquisa -->
       <section>
-        <h2>Linhas de Pesquisa e Atuação Científica</h2>
+        <h2>Linhas de Pesquisa</h2>
         <div class="grid-2">
           <div class="card">
             <h4>Tecnologias Assistivas e Acessibilidade</h4>
-            <p>Pesquisa e desenvolvimento de dispositivos e soluções computacionais voltadas à inclusão, acessibilidade e apoio a pessoas com necessidades específicas, interfaces funcionais e ergonomia de uso.</p>
+            <p>Concepção de dispositivos eletrônicos e sistemas computacionais para inclusão digital, comunicação suplementar e auxílio a pessoas com necessidades específicas.</p>
           </div>
           <div class="card">
             <h4>Internet das Coisas (IoT) e Monitoramento</h4>
-            <p>Concepção de redes de sensores, telemetria em tempo real, automação predial/residencial e controladores inteligentes com integração a serviços distribuídos na nuvem.</p>
+            <p>Desenvolvimento de arquiteturas baseadas em microcontroladores, sensoriamento remoto, telemetria em tempo real e automação inteligente.</p>
           </div>
           <div class="card">
             <h4>Redes de Computadores e Automação Industrial</h4>
-            <p>Comunicação de dados, protocolos industriais, sistemas supervisórios, redes de campo e integração de tecnologias de automação na indústria.</p>
+            <p>Protocolos de comunicação, redes industriais, sistemas supervisórios (SCADA), integração hardware-software e controlo distribuído.</p>
           </div>
           <div class="card">
-            <h4>Realidade Virtual e Ambientes Interativos</h4>
-            <p>Desenvolvimento e aplicação de simuladores e ambientes virtuais interativos aplicados à educação tecnológica, treinamento e capacitação prática.</p>
+            <h4>Realidade Virtual e Ambientes Imersivos</h4>
+            <p>Aplicações imersivas interativas voltadas para simulação, capacitação técnica e apoio a processos terapêuticos e educativos.</p>
           </div>
         </div>
       </section>
 
-      <!-- Projetos e Atividades -->
+      <!-- Projetos de Pesquisa Específicos -->
       <section>
-        <h2>Projetos e Atividades em Desenvolvimento</h2>
-        <ul>
-          <li><strong>Dispositivos e Interfaces Assistivas:</strong> Prototipagem de sistemas microcontrolados e sensores para apoio à comunicação e usabilidade cotidiana.</li>
-          <li><strong>Telemetria e Ambientes Conectados:</strong> Plataformas de monitoramento remoto de grandezas físicas e automação baseada em IoT.</li>
-          <li><strong>Aplicações Didáticas e Formação Tecnológica:</strong> Produção de ferramentas educacionais interativas e metodologias para apoio ao ensino de programação e automação.</li>
-          <li><strong>Orientação Acadêmica:</strong> Formação de estudantes por meio de bolsas de Iniciação Científica e projetos aplicados às demandas da comunidade e da indústria regional.</li>
-        </ul>
+        <h2>Projetos de Pesquisa em Destaque</h2>
+        
+        <div class="project-item">
+          <h4>Monitoramento de Funções Cognitivas e Saúde via IoT</h4>
+          <p>Desenvolvimento de plataformas baseadas em sensores conectados e IoT para acompanhamento de rotinas, avaliação de parâmetros motores e suporte ao monitoramento de alterações cognitivas.</p>
+        </div>
+
+        <div class="project-item">
+          <h4>Ambientes de Realidade Virtual para Baixa Visão</h4>
+          <p>Investigação e prototipagem de cenários imersivos de Realidade Virtual com alto contraste e estímulos dimensionados para apoio à mobilidade e autonomia de pessoas com baixa visão.</p>
+        </div>
+
+        <div class="project-item">
+          <h4>Identificação e Rastreamento Aplicado (RFID / Sensores)</h4>
+          <p>Estudo e implantação de tecnologias RFID e sensoriamento para automação de processos, identificação assistiva e gestão de dispositivos em ambientes controlados.</p>
+        </div>
+
+        <div class="project-item">
+          <h4>Dispositivos Microcontrolados para Inclusão e Acessibilidade</h4>
+          <p>Construção de interfaces físicas acessíveis, adaptações ergométricas e sistemas embarcados para facilitação da comunicação e autonomia pessoal.</p>
+        </div>
+      </section>
+
+      <!-- Equipe e Estudantes Orientados -->
+      <section>
+        <h2>Pesquisadores e Estudantes Orientados</h2>
+        <p>Estudantes e pesquisadores que integram ou integraram projetos de Iniciação Científica (PIBIC/PIBITI), Inovação Tecnológica e TCC sob orientação do Prof. Dr. Rogério Pinto Alexandre:</p>
+        
+        <div class="student-grid">
+          <div class="student-badge">
+            <span class="student-name">Fabricio Malta de Oliveira</span>
+            <span class="student-role">Pesquisa / Iniciação Tecnológica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Willian Gustavo Rocha Leme</span>
+            <span class="student-role">Pesquisa / Iniciação Tecnológica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">João Victor do N. Secate</span>
+            <span class="student-role">Pesquisa / Iniciação Científica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Renã Garcia</span>
+            <span class="student-role">Pesquisa / Iniciação Científica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Igor Solfa Romero</span>
+            <span class="student-role">Pesquisa / Iniciação Tecnológica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Katherine S. H. K. Sawaeda</span>
+            <span class="student-role">Pesquisa / Iniciação Científica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Matheus V. Silva dos Santos</span>
+            <span class="student-role">Pesquisa / Iniciação Científica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Reynold Navarro Mazo</span>
+            <span class="student-role">Pesquisa / Iniciação Científica</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Pedro Henrique Ton Pauletti</span>
+            <span class="student-role">Pesquisa / Iniciação Científica</span>
+          </div>
+        </div>
       </section>
 
       <!-- Contato -->
@@ -298,7 +388,7 @@
             <p class="inst">Federal Institute of Education, Science and Technology of São Paulo (IFSP) – Campus Birigui<br>
             Fatec Lins (Centro Paula Souza)</p>
             
-            <p>Ph.D. in Engineering and Professor with an extensive teaching and research track record in Computer Science, Computer Networks, Industrial Automation, and Assistive Technologies. Mentors undergraduate research fellows (PIBIC/PIBITI) and capstone thesis projects, officially certified by IFSP and registered within Brazil's CNPq Research Group Directory.</p>
+            <p>Ph.D. in Engineering and Professor with an extensive research and teaching background in Computer Science, Computer Networks, Industrial Automation, and Assistive Technologies. Mentors undergraduate researchers (PIBIC/PIBITI) and capstone thesis students, certified by IFSP and registered within Brazil's CNPq Research Group Directory.</p>
             
             <div class="links">
               <a class="badge" href="http://lattes.cnpq.br/3980407261409241" target="_blank" rel="noopener">Lattes Curriculum (CNPq)</a>
@@ -313,36 +403,95 @@
 
       <!-- Research Lines -->
       <section>
-        <h2>Research Areas & Scientific Scope</h2>
+        <h2>Research Areas</h2>
         <div class="grid-2">
           <div class="card">
             <h4>Assistive Technologies & Accessibility</h4>
-            <p>Investigation and prototyping of hardware/software solutions focused on functional accessibility, assistive devices for individuals with motor or cognitive needs, and computational ergonomics.</p>
+            <p>Design of electronic hardware and computational frameworks for digital inclusion, augmentative communication, and functional support for individuals with specific needs.</p>
           </div>
           <div class="card">
             <h4>Internet of Things (IoT) & Monitoring</h4>
-            <p>Sensor architectures, real-time telemetry, smart environment automation, and distributed control systems integrated with cloud backends.</p>
+            <p>Architectures based on microcontrollers, wireless sensor networks, real-time telemetry, and smart environment automation.</p>
           </div>
           <div class="card">
             <h4>Computer Networks & Industrial Automation</h4>
-            <p>Industrial communication protocols, fieldbus networks, SCADA systems, distributed architectures, and operational technology (OT) integration.</p>
+            <p>Communication protocols, industrial fieldbuses, supervisory systems (SCADA), hardware-software integration, and distributed control.</p>
           </div>
           <div class="card">
-            <h4>Virtual Reality & Interactive Systems</h4>
-            <p>Design and deployment of virtual environments and immersive simulations for interactive STEM education, technical training, and hands-on skill development.</p>
+            <h4>Virtual Reality & Immersive Systems</h4>
+            <p>Interactive immersive software engineered for realistic simulation, technical training, and therapeutic support environments.</p>
           </div>
         </div>
       </section>
 
-      <!-- Projects -->
+      <!-- Specific Research Projects -->
       <section>
-        <h2>Active Projects & Initiatives</h2>
-        <ul>
-          <li><strong>Smart Assistive Systems:</strong> Microcontroller- and sensor-based devices engineered to assist communication and improve daily autonomous living.</li>
-          <li><strong>Connected Environments & Telemetry:</strong> Remote sensing infrastructure for continuous acquisition and monitoring of operational parameters.</li>
-          <li><strong>Educational Tech Applications:</strong> Interactive digital tools and platforms designed to enhance computer programming and logic education.</li>
-          <li><strong>Academic Mentorship:</strong> Guiding undergraduate researchers in funded institutional initiatives addressing local industrial and community challenges.</li>
-        </ul>
+        <h2>Featured Research Projects</h2>
+        
+        <div class="project-item">
+          <h4>Cognitive Function Monitoring & Health via IoT</h4>
+          <p>Development of connected sensor architectures and IoT platforms for activity tracking, motor parameter evaluation, and cognitive condition assessment.</p>
+        </div>
+
+        <div class="project-item">
+          <h4>Virtual Reality Environments for Low Vision Support</h4>
+          <p>Investigation and prototyping of immersive high-contrast VR environments designed to improve spatial orientation and autonomy for individuals with low vision.</p>
+        </div>
+
+        <div class="project-item">
+          <h4>Applied Identification & Tracking (RFID & Sensors)</h4>
+          <p>Analysis and implementation of RFID and sensor infrastructures for process automation, assistive identification, and controlled asset management.</p>
+        </div>
+
+        <div class="project-item">
+          <h4>Embedded Microcontrolled Assistive Devices</h4>
+          <p>Prototyping accessible physical user interfaces, ergonomic adaptations, and embedded controllers to foster independence in daily tasks.</p>
+        </div>
+      </section>
+
+      <!-- Team & Advisees -->
+      <section>
+        <h2>Researchers & Student Advisees</h2>
+        <p>Undergraduate researchers and project fellows who have conducted research within PIBIC/PIBITI institutional programs and capstone projects directed by Prof. Dr. Rogério Pinto Alexandre:</p>
+        
+        <div class="student-grid">
+          <div class="student-badge">
+            <span class="student-name">Fabricio Malta de Oliveira</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Willian Gustavo Rocha Leme</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">João Victor do N. Secate</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Renã Garcia</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Igor Solfa Romero</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Katherine S. H. K. Sawaeda</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Matheus V. Silva dos Santos</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Reynold Navarro Mazo</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+          <div class="student-badge">
+            <span class="student-name">Pedro Henrique Ton Pauletti</span>
+            <span class="student-role">Undergraduate Researcher</span>
+          </div>
+        </div>
       </section>
 
       <!-- Contact -->
