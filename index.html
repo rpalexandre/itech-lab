@@ -7,14 +7,16 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Padrão: exibe Português (PT) e oculta Inglês (EN) */
-    .lang-en { display: none; }
+    .lang-en { display: none !important; }
     .lang-pt { display: block; }
-    span.lang-pt, a.lang-pt, strong.lang-pt { display: inline; }
+    span.lang-pt, a.lang-pt, strong.lang-pt { display: inline !important; }
+    th.lang-pt, td.lang-pt { display: table-cell !important; }
 
     /* Quando ativada a classe .show-en no body: exibe Inglês (EN) e oculta Português (PT) */
-    body.show-en .lang-pt { display: none; }
+    body.show-en .lang-pt { display: none !important; }
     body.show-en .lang-en { display: block; }
-    body.show-en span.lang-en, body.show-en a.lang-en, body.show-en strong.lang-en { display: inline; }
+    body.show-en span.lang-en, body.show-en a.lang-en, body.show-en strong.lang-en { display: inline !important; }
+    body.show-en th.lang-en, body.show-en td.lang-en { display: table-cell !important; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
@@ -226,7 +228,7 @@
       </div>
     </section>
 
-    <!-- Membros e Estudantes Orientados (Tabela do Modelo Anterior) -->
+    <!-- Membros e Estudantes Orientados (Tabela com Títulos Alinhados em Linha Única) -->
     <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-6">
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 border-b border-slate-100 pb-3">
         <h3 class="text-xl font-bold text-slate-900 lang-pt">Pesquisadores e Estudantes Orientados</h3>
@@ -243,65 +245,69 @@
         Undergraduate research fellows and students mentored by Prof. Dr. Rogério Pinto Alexandre:
       </p>
 
-      <div class="border border-slate-200 rounded-lg overflow-hidden">
-        <table class="w-full text-left text-sm">
+      <div class="border border-slate-200 rounded-lg overflow-x-auto">
+        <table class="w-full text-left text-sm min-w-[620px]">
           <thead class="bg-slate-100 text-slate-700 text-xs uppercase font-semibold">
             <tr>
-              <th class="py-3 px-4 lang-pt">Estudante / Pesquisador</th>
-              <th class="py-3 px-4 lang-en">Student Researcher</th>
-
-              <th class="py-3 px-4 lang-pt">Nível / Modalidade</th>
-              <th class="py-3 px-4 lang-en">Program / Level</th>
-
-              <th class="py-3 px-4 lang-pt">Vínculo com o Grupo</th>
-              <th class="py-3 px-4 lang-en">Research Group Affiliation</th>
+              <th class="py-3 px-4 whitespace-nowrap">
+                <span class="lang-pt">Estudante / Pesquisador</span>
+                <span class="lang-en">Student Researcher</span>
+              </th>
+              <th class="py-3 px-4 whitespace-nowrap">
+                <span class="lang-pt">Nível / Modalidade</span>
+                <span class="lang-en">Program / Level</span>
+              </th>
+              <th class="py-3 px-4 whitespace-nowrap">
+                <span class="lang-pt">Vínculo com o Grupo</span>
+                <span class="lang-en">Research Group Affiliation</span>
+              </th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Fabricio Malta de Oliveira</td>
-              <td class="py-3 px-4 text-slate-500"><span class="lang-pt">Pesquisa / Iniciação Tecnológica</span><span class="lang-en">Undergraduate Research Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Fabricio Malta de Oliveira</td>
+              <td class="py-3 px-4 text-slate-500 whitespace-nowrap"><span class="lang-pt">Pesquisa / Iniciação Tecnológica</span><span class="lang-en">Undergraduate Research Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Willian Gustavo Rocha Leme</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-pt">Iniciação Tecnológica</span><span class="lang-en">Undergraduate Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Willian Gustavo Rocha Leme</td>
+              <td class="py-3 px-4 font-medium text-emerald-700 whitespace-nowrap"><span class="lang-pt">Iniciação Tecnológica</span><span class="lang-en">Undergraduate Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">João Victor do Nascimento Secate</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">João Victor do Nascimento Secate</td>
+              <td class="py-3 px-4 font-medium text-emerald-700 whitespace-nowrap"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Renã Garcia</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Renã Garcia</td>
+              <td class="py-3 px-4 font-medium text-emerald-700 whitespace-nowrap"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Igor Solfa Romero</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-pt">Iniciação Tecnológica</span><span class="lang-en">Undergraduate Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Igor Solfa Romero</td>
+              <td class="py-3 px-4 font-medium text-emerald-700 whitespace-nowrap"><span class="lang-pt">Iniciação Tecnológica</span><span class="lang-en">Undergraduate Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Katherine Suely Hideko Kuano Sawaeda</td>
-              <td class="py-3 px-4 text-slate-500"><span class="lang-pt">Pesquisa / Iniciação Científica</span><span class="lang-en">Undergraduate Research Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Katherine Suely Hideko Kuano Sawaeda</td>
+              <td class="py-3 px-4 text-slate-500 whitespace-nowrap"><span class="lang-pt">Pesquisa / Iniciação Científica</span><span class="lang-en">Undergraduate Research Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Matheus Vinicius Silva dos Santos</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Matheus Vinicius Silva dos Santos</td>
+              <td class="py-3 px-4 font-medium text-emerald-700 whitespace-nowrap"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Reynold Navarro Mazo</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Reynold Navarro Mazo</td>
+              <td class="py-3 px-4 font-medium text-emerald-700 whitespace-nowrap"><span class="lang-pt">Iniciação Científica</span><span class="lang-en">Undergraduate Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
             <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Pedro Henrique Ton Pauletti</td>
-              <td class="py-3 px-4 text-slate-500"><span class="lang-pt">Pesquisa / Iniciação Científica</span><span class="lang-en">Undergraduate Research Fellow</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; Tecnologias Assistivas</td>
+              <td class="py-3 px-4 font-semibold text-slate-900 whitespace-nowrap">Pedro Henrique Ton Pauletti</td>
+              <td class="py-3 px-4 text-slate-500 whitespace-nowrap"><span class="lang-pt">Pesquisa / Iniciação Científica</span><span class="lang-en">Undergraduate Research Fellow</span></td>
+              <td class="py-3 px-4 whitespace-nowrap">iTech Lab &bull; Tecnologias Assistivas</td>
             </tr>
           </tbody>
         </table>
