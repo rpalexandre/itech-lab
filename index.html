@@ -1,333 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>iTech Lab | Assistive Technologies & Rehabilitation Sciences - IFSP</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iTech Lab | Grupo de Pesquisa em Tecnologias Assistivas e Automação</title>
+  <meta name="description" content="Laboratório de Pesquisa iTech - IFSP / FATEC. Linhas de pesquisa em Tecnologias Assistivas, Internet das Coisas (IoT), Realidade Virtual, Redes de Computadores e Automação Industrial.">
   <style>
-    .lang-pt { display: none; }
-    body.show-pt .lang-en { display: none; }
-    body.show-pt .lang-pt { display: block; }
-    body.show-pt span.lang-pt, body.show-pt a.lang-pt { display: inline; }
+    :root {
+      --primary: #003366;
+      --secondary: #006699;
+      --accent: #2b7a78;
+      --text: #222222;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #ffffff;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 1.4rem;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .profile-info h3 {
+      font-size: 1.25rem;
+      color: var(--secondary);
+    }
+
+    .profile-info .role {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .profile-info .inst {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #edf2f7;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid #cbd5e1;
+      transition: background 0.2s ease;
+    }
+
+    .badge:hover {
+      background: #e2e8f0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem;
+      background: #fafafa;
+    }
+
+    .card h4 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style-position: inside;
+      margin-left: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body>
 
-  <!-- Header Institucional com Seletor de Idioma -->
-  <header class="bg-slate-900 text-white border-b border-slate-700 py-10 px-6">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-      <div>
-        <div class="flex items-center gap-3">
-          <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold lang-en">Interdisciplinary Research Laboratory</span>
-          <span class="text-xs uppercase tracking-widest text-emerald-400 font-semibold lang-pt">Laboratório de Pesquisa Interdisciplinar</span>
-          
-          <!-- Botão Seletor de Idioma -->
-          <div class="inline-flex rounded-md shadow-sm bg-slate-800 p-0.5 border border-slate-700 text-xs">
-            <button id="btn-en" onclick="setLang('en')" class="px-2 py-0.5 rounded bg-emerald-600 text-white font-bold transition">EN</button>
-            <button id="btn-pt" onclick="setLang('pt')" class="px-2 py-0.5 rounded text-slate-400 font-medium hover:text-white transition">PT</button>
-          </div>
-        </div>
-
-        <h1 class="text-3xl font-bold mt-1 lang-en">iTech - Assistive Health Technologies & Rehabilitation Research Lab</h1>
-        <h1 class="text-3xl font-bold mt-1 lang-pt">iTech - Tecnologias Assistivas em Saúde e Ciências da Reabilitação</h1>
-
-        <p class="text-slate-300 text-sm mt-1 lang-en">
-          Federal Institute of Education, Science and Technology of São Paulo (IFSP) &bull; Campus Birigui
-        </p>
-        <p class="text-slate-300 text-sm mt-1 lang-pt">
-          Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) &bull; Campus Birigui
-        </p>
-      </div>
-
-      <div class="text-xs text-slate-400 md:text-right border-t md:border-t-0 pt-2 md:pt-0 border-slate-700">
-        <p class="font-medium text-slate-300 lang-en">CNPq Certified Research Group</p>
-        <p class="font-medium text-slate-300 lang-pt">Grupo de Pesquisa Certificado pelo CNPq</p>
-        <p class="lang-en">Ministry of Education (MEC), Brazil</p>
-        <p class="lang-pt">Ministério da Educação (MEC), Brasil</p>
-      </div>
-    </div>
+  <header>
+    <h1>iTech Research Lab</h1>
+    <p>Grupo de Pesquisa e Desenvolvimento em Tecnologias Assistivas, Internet das Coisas e Sistemas Inteligentes</p>
   </header>
 
-  <!-- Conteúdo Principal -->
-  <main class="max-w-5xl mx-auto px-6 py-10 space-y-10">
-
-    <!-- Card do Principal Investigator (PI) -->
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
-      <div class="space-y-4">
-        <div class="inline-block bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold">
-          <span class="lang-en">Principal Investigator (PI) & Lab Director</span>
-          <span class="lang-pt">Pesquisador Responsável (Líder do Laboratório)</span>
-        </div>
-        <h2 class="text-2xl font-bold text-slate-900">Prof. Dr. Rogério Pinto Alexandre</h2>
-        
-        <p class="text-slate-600 text-sm leading-relaxed lang-en">
-          Full Professor (Professor Titular) at IFSP. Ph.D. from UNESP focusing on Applied Biosystems, 
-          Environmental Instrumentation, Cognitive Monitoring, Assistive Rehabilitation Devices, and Healthcare Ergonomics. 
-          Directing investigative programs in clinical accessibility protocols, sensor telemetry, and functional rehabilitation tools.
-        </p>
-        <p class="text-slate-600 text-sm leading-relaxed lang-pt">
-          Professor Titular no IFSP. Doutor pela UNESP com foco em Biossistemas Aplicados, 
-          Instrumentação Ambiental, Monitoramento Cognitivo, Dispositivos Assistivos de Reabilitação e Ergonomia em Saúde. 
-          Coordena investigações científicas em protocolos clínicos de acessibilidade, telemetria por sensores e reabilitação funcional.
-        </p>
-
-        <!-- Links Oficiais de Validação Cruzada -->
-        <div class="pt-4 grid grid-cols-1 md:grid-cols-2 gap-3 text-sm border-t border-slate-100">
-          <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700 lang-en">Institutional Email:</span>
-            <span class="font-semibold text-slate-700 lang-pt">E-mail Institucional:</span>
-            <a href="mailto:rpalexandre@ifsp.edu.br" class="text-blue-600 hover:underline">rpalexandre@ifsp.edu.br</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700">ORCID:</span>
-            <a href="https://orcid.org/0000-0002-2281-2590" target="_blank" rel="noopener" class="text-blue-600 hover:underline">0000-0002-2281-2590</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700 lang-en">Curriculum Lattes:</span>
-            <span class="font-semibold text-slate-700 lang-pt">Currículo Lattes:</span>
-            <a href="https://lattes.cnpq.br/3980407261409241" target="_blank" rel="noopener" class="text-blue-600 hover:underline">3980407261409241 (CNPq)</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700 lang-en">CNPq DGP Mirror:</span>
-            <span class="font-semibold text-slate-700 lang-pt">Espelho DGP/CNPq:</span>
-            <a href="http://dgp.cnpq.br/dgp/espelhorh/3980407261409241" target="_blank" rel="noopener" class="text-blue-600 hover:underline">DGP Research Group Record</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="font-semibold text-slate-700 lang-en">Faculty Registry:</span>
-            <span class="font-semibold text-slate-700 lang-pt">Corpo Docente IFSP:</span>
-            <a href="https://bri.ifsp.edu.br/index.php/docentes" target="_blank" rel="noopener" class="text-blue-600 hover:underline">IFSP Faculty Directory (Campus Birigui)</a>
+  <div class="container">
+    
+    <!-- Liderança e Identificação Institucional -->
+    <section>
+      <h2>Liderança Académica & Coordenação</h2>
+      <div class="profile-card">
+        <div class="profile-info">
+          <h3>Prof. Dr. Rogério Pinto Alexandre</h3>
+          <p class="role">Investigador Principal (PI) | Professor Titular</p>
+          <p class="inst">Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) – Câmpus Birigui<br>
+          Faculdade de Tecnologia de Lins (FATEC Lins / Centro Paula Souza)</p>
+          
+          <p>Doutor em Engenharia e Docente com ampla trajetória de ensino e investigação científica nas áreas de Ciência da Computação, Redes de Comunicação de Dados, Automação Industrial e Tecnologias Assistivas. Responsável pela orientação de projetos de Iniciação Científica (PIBIC/PIBITI) e Trabalhos de Conclusão de Curso com certificação institucional e registo no CNPq.</p>
+          
+          <div class="links">
+            <a class="badge" href="http://lattes.cnpq.br/3980407261409241" target="_blank" rel="noopener">Currículo Lattes (CNPq)</a>
+            <a class="badge" href="http://dgp.cnpq.br/dgp/espelhorh/3980407261409241" target="_blank" rel="noopener">Diretório dos Grupos de Pesquisa (CNPq)</a>
+            <a class="badge" href="https://orcid.org/0000-0002-2281-2590" target="_blank" rel="noopener">ORCID Profile</a>
+            <a class="badge" href="https://bri.ifsp.edu.br/index.php/docentes" target="_blank" rel="noopener">Corpo Docente IFSP Birigui</a>
+            <a class="badge" href="https://www.fateclins.edu.br/web/corpo-docente" target="_blank" rel="noopener">Corpo Docente FATEC Lins</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Escopo de Pesquisa do Laboratório -->
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-4">
-      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-en">Scientific Scope & Applied Investigation</h3>
-      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-pt">Escopo Científico e Linhas de Investigação</h3>
-
-      <p class="text-slate-600 text-sm leading-relaxed lang-en">
-        The <strong>iTech Research Lab (Grupo de Pesquisa em Tecnologias Assistivas)</strong> is an interdisciplinary scientific group certified by CNPq and hosted at IFSP. The laboratory is committed to translational healthcare engineering, human factors, cognitive assessment methodologies, and assistive device development aimed at improving the quality of life for aging populations and persons with physical and sensory impairments.
-      </p>
-      <p class="text-slate-600 text-sm leading-relaxed lang-pt">
-        O <strong>iTech (Grupo de Pesquisa em Tecnologias Assistivas)</strong> é um grupo de investigação científica interdisciplinar certificado pelo CNPq e sediado no IFSP. O laboratório atua nas áreas de engenharia translacional aplicada à saúde, fatores humanos, metodologias de avaliação cognitiva e desenvolvimento de dispositivos assistivos voltados à melhoria da qualidade de vida de idosos e pessoas com limitações sensoriais e físicas.
-      </p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
-        <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Assistive Health & Rehabilitation</h4>
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Tecnologia Assistiva e Reabilitação</h4>
-          <p class="text-xs text-slate-600 lang-en">Cognitive diagnostic protocols, mobility support devices, sensory substitution tools, and human-centred clinical accessibility.</p>
-          <p class="text-xs text-slate-600 lang-pt">Protocolos de diagnóstico cognitivo, auxílio à mobilidade, substituição sensorial e acessibilidade clínica focada no paciente.</p>
+    <!-- Linhas de Investigação Reais -->
+    <section>
+      <h2>Linhas de Investigação e Atuação Científica</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h4>Tecnologias Assistivas e Acessibilidade</h4>
+          <p>Investigação e conceção de dispositivos e soluções computacionais para suporte e reabilitação de indivíduos com limitações motoras ou cognitivas, interfaces acessíveis e ergonomia computacional.</p>
         </div>
-        <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Bio-Instrumentation & Sensors</h4>
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Bioinstrumentação e Sensores</h4>
-          <p class="text-xs text-slate-600 lang-en">Wearable vital sign telemetry, biometric acquisition nodes, and environmental ergonomics for patient care.</p>
-          <p class="text-xs text-slate-600 lang-pt">Telemetria de sinais vitais, biometria não-invasiva e ergonomia ambiental para cuidados de saúde contínuos.</p>
+        <div class="card">
+          <h4>Internet das Coisas (IoT) e Monitorização</h4>
+          <p>Desenvolvimento de arquiteturas de sensores, aquisição de dados telemétricos em tempo real, automação de ambientes e controlo distribuído aplicado a contextos industriais e de saúde.</p>
         </div>
-        <div class="border border-slate-100 bg-slate-50 p-4 rounded-lg">
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-en">Applied Biosystems & Agriculture</h4>
-          <h4 class="font-semibold text-slate-800 text-sm mb-1 lang-pt">Biossistemas Aplicados e Sustentabilidade</h4>
-          <p class="text-xs text-slate-600 lang-en">Energy instrumentation in agriculture, physical property evaluation of bio-materials, and sustainable telemetry.</p>
-          <p class="text-xs text-slate-600 lang-pt">Instrumentação energética na agricultura, avaliação de propriedades físicas de biomateriais e sustentabilidade.</p>
+        <div class="card">
+          <h4>Redes de Computadores e Automação Industrial</h4>
+          <p>Estudo de protocolos de comunicação industriais, integração de sistemas distribuídos, segurança de redes aplicadas à indústria e convergência de tecnologias operacionais.</p>
+        </div>
+        <div class="card">
+          <h4>Realidade Virtual e Ambientes Interativos</h4>
+          <p>Modelação e implementação de ambientes virtuais para formação, simulação e práticas educativas interativas através de ferramentas imersivas.</p>
         </div>
       </div>
     </section>
 
-    <!-- Membros e Estudantes Orientados (Dados Oficiais DGP/CNPq) -->
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-6">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 border-b border-slate-100 pb-3">
-        <h3 class="text-xl font-bold text-slate-900 lang-en">Supervised Research Fellows</h3>
-        <h3 class="text-xl font-bold text-slate-900 lang-pt">Estudantes Orientados no Grupo de Pesquisa</h3>
-
-        <span class="text-xs bg-emerald-100 text-emerald-800 font-medium px-2.5 py-1 rounded-md lang-en">CNPq DGP Certified Mentorship</span>
-        <span class="text-xs bg-emerald-100 text-emerald-800 font-medium px-2.5 py-1 rounded-md lang-pt">Certificação DGP / CNPq</span>
-      </div>
-
-      <p class="text-sm text-slate-600 lang-en">
-        Student investigators conducting scientific initiation and technological development in Assistive Health Systems:
-      </p>
-      <p class="text-sm text-slate-600 lang-pt">
-        Estudantes e pesquisadores em Iniciação Científica e Desenvolvimento Tecnológico em Tecnologias Assistivas e Saúde:
-      </p>
-
-      <div class="border border-slate-200 rounded-lg overflow-hidden">
-        <table class="w-full text-left text-sm">
-          <thead class="bg-slate-100 text-slate-700 text-xs uppercase font-semibold">
-            <tr>
-              <th class="py-3 px-4 lang-en">Student Researcher</th>
-              <th class="py-3 px-4 lang-pt">Estudante</th>
-
-              <th class="py-3 px-4 lang-en">Training Level</th>
-              <th class="py-3 px-4 lang-pt">Nível de Treinamento</th>
-
-              <th class="py-3 px-4 lang-en">Research Group & Host Institution</th>
-              <th class="py-3 px-4 lang-pt">Grupo de Pesquisa e Instituição</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Fabricio Malta de Oliveira</td>
-              <td class="py-3 px-4 text-slate-500"><span class="lang-en">Research Fellow</span><span class="lang-pt">Pesquisador</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Willian Gustavo Rocha Leme</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate Fellow (Graduação)</span><span class="lang-pt">Graduação</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">João Victor do Nascimento Secate</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate Fellow (Graduação)</span><span class="lang-pt">Graduação</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Renã Garcia</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate Fellow (Graduação)</span><span class="lang-pt">Graduação</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Igor Solfa Romero</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate Fellow (Graduação)</span><span class="lang-pt">Graduação</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Katherine Suely Hideko Kuano Sawaeda</td>
-              <td class="py-3 px-4 text-slate-500"><span class="lang-en">Research Fellow</span><span class="lang-pt">Pesquisadora</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Matheus Vinicius Silva dos Santos</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate Fellow (Graduação)</span><span class="lang-pt">Graduação</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Reynold Navarro Mazo</td>
-              <td class="py-3 px-4 font-medium text-emerald-700"><span class="lang-en">Undergraduate Fellow (Graduação)</span><span class="lang-pt">Graduação</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-            <tr>
-              <td class="py-3 px-4 font-semibold text-slate-900">Pedro Henrique Ton Pauletti</td>
-              <td class="py-3 px-4 text-slate-500"><span class="lang-en">Research Fellow</span><span class="lang-pt">Pesquisador</span></td>
-              <td class="py-3 px-4">iTech Lab &bull; IFSP Campus Birigui</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-[11px] text-slate-400 italic lang-en">
-        * Official active members recorded in the CNPq Directory of Research Groups (DGP).
-      </p>
-      <p class="text-[11px] text-slate-400 italic lang-pt">
-        * Membros ativos certificados pelo Diretório dos Grupos de Pesquisa no Brasil (DGP / CNPq).
-      </p>
+    <!-- Produção Científica e Projetos -->
+    <section>
+      <h2>Projetos e Atividades em Desenvolvimento</h2>
+      <ul>
+        <li><strong>Sistemas Assistivos Inteligentes:</strong> Concepção de protótipos baseados em microcontroladores e sensores para auxílio funcional.</li>
+        <li><strong>Monitorização de Ambientes Conectados:</strong> Plataformas de telemetria integradas a serviços na nuvem para avaliação de variáveis ambientais e operacionais.</li>
+        <li><strong>Aplicações Educativas e Formação Tecnológica:</strong> Desenvolvimento de ferramentas digitais e recursos didáticos para ensino de computação e lógica.</li>
+        <li><strong>Orientação Académica:</strong> Acompanhamento de bolseiros institucionais em projetos de Iniciação Científica e Inovação Tecnológica com enfoque na aplicação comunitária e industrial.</li>
+      </ul>
     </section>
 
-    <!-- Produção Científica Selecionada (Focada em Saúde Assistiva e Biossistemas) -->
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-5">
-      <div class="flex justify-between items-center border-b border-slate-100 pb-3">
-        <h3 class="text-xl font-bold text-slate-900 lang-en">Selected Peer-Reviewed Research</h3>
-        <h3 class="text-xl font-bold text-slate-900 lang-pt">Investigação Científica e Publicações Selecionadas</h3>
-        <a href="https://orcid.org/0000-0002-2281-2590" target="_blank" rel="noopener" class="text-xs bg-blue-50 text-blue-700 border border-blue-200 px-2.5 py-1 rounded hover:bg-blue-100 transition font-medium">
-          ORCID &rarr;
-        </a>
-      </div>
-
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
-          <div class="flex justify-between items-start gap-2">
-            <h4 class="text-sm font-semibold text-slate-900">
-              <span class="lang-en">Assistive Technologies and Cognitive Evaluation Systems for Clinical and Healthcare Support</span>
-              <span class="lang-pt">Tecnologias Assistivas e Sistemas de Avaliação Cognitiva para Apoio Clínico e Saúde</span>
-            </h4>
-            <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Healthcare Tech</span>
-          </div>
-          <p class="text-xs text-slate-600 mt-1">
-            <strong>Authors:</strong> Alexandre, R. P., et al. &bull; <span class="italic text-slate-500">Journal of Assistive Technologies & Rehabilitation</span>
-          </p>
-        </div>
-
-        <div class="p-4 rounded-lg bg-slate-50 border border-slate-100">
-          <div class="flex justify-between items-start gap-2">
-            <h4 class="text-sm font-semibold text-slate-900">
-              <span class="lang-en">Bio-Instrumentation, Material Characterization, and Sensory Telemetry in Agronomic Systems</span>
-              <span class="lang-pt">Bioinstrumentação, Caracterização de Materiais e Telemetria em Sistemas Agronômicos</span>
-            </h4>
-            <span class="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded font-mono">Biosystems Eng</span>
-          </div>
-          <p class="text-xs text-slate-600 mt-1">
-            <strong>Authors:</strong> Alexandre, R. P., et al. &bull; <span class="italic text-slate-500">Applied Biosystems & Environmental Instrumentation</span>
-          </p>
-        </div>
-      </div>
-
-      <div class="pt-2 text-xs text-slate-500 flex flex-wrap items-center justify-between border-t border-slate-100 gap-2">
-        <span class="lang-en">Verified bibliographic metrics and records:</span>
-        <span class="lang-pt">Métricas e registros bibliográficos completos:</span>
-        <div class="flex gap-3 font-medium">
-          <a href="https://orcid.org/0000-0002-2281-2590" target="_blank" rel="noopener" class="text-blue-600 hover:underline">ORCID (0000-0002-2281-2590)</a>
-          <span class="text-slate-300">|</span>
-          <a href="https://lattes.cnpq.br/3980407261409241" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Lattes (CNPq)</a>
-        </div>
-      </div>
+    <!-- Contacto -->
+    <section>
+      <h2>Contactos Institucionais</h2>
+      <p><strong>Laboratório iTech:</strong> Instituto Federal de São Paulo (IFSP) – Câmpus Birigui</p>
+      <p><strong>E-mail Institucional (IFSP):</strong> <a href="mailto:rpalexandre@ifsp.edu.br">rpalexandre@ifsp.edu.br</a></p>
+      <p><strong>E-mail Institucional (FATEC/CPS):</strong> <a href="mailto:rogerio.alexandre@cps.sp.gov.br">rogerio.alexandre@cps.sp.gov.br</a></p>
+      <p><strong>Localização:</strong> Birigui / Lins, São Paulo, Brasil</p>
     </section>
 
-    <!-- Certificação Institucional -->
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-4">
-      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-en">Institutional Accreditation</h3>
-      <h3 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 lang-pt">Certificação Institucional</h3>
+  </div>
 
-      <div class="space-y-3 text-sm text-slate-600">
-        <p class="lang-en">
-          The research group operates under official certification by the <strong>Pró-Reitoria de Pesquisa e Pós-Graduação (PRP / IFSP)</strong> and the <strong>National Council for Scientific and Technological Development (CNPq)</strong>.
-        </p>
-        <p class="lang-pt">
-          O grupo possui certificação oficial homologada pela <strong>Pró-Reitoria de Pesquisa e Pós-Graduação (PRP / IFSP)</strong> e pelo <strong>Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)</strong>.
-        </p>
-
-        <ul class="list-disc list-inside space-y-1.5 pt-1 text-slate-700 text-xs">
-          <li>
-            <strong class="lang-en">Host Academic Institution:</strong><strong class="lang-pt">Instituição de Ensino Sede:</strong>
-            Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP), Câmpus Birigui.
-          </li>
-          <li>
-            <strong class="lang-en">Core Field:</strong><strong class="lang-pt">Área Predominante:</strong>
-            <span class="lang-en">Assistive Technologies, Rehabilitation Sciences & Biosystems.</span>
-            <span class="lang-pt">Tecnologias Assistivas, Ciências da Reabilitação e Biossistemas.</span>
-          </li>
-          <li>
-            <strong class="lang-en">Affiliation Status:</strong><strong class="lang-pt">Situação Institucional:</strong>
-            Active / CNPq DGP Certified.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Rodapé -->
-  <footer class="text-center text-xs text-slate-500 py-8 border-t border-slate-200">
-    &copy; iTech Research Lab &bull; IFSP Campus Birigui &bull; São Paulo, Brazil
+  <footer>
+    <p>&copy; iTech Research Lab — Coordenação: Prof. Dr. Rogério Pinto Alexandre. Todos os direitos reservados.</p>
   </footer>
-
-  <!-- Script de Alternância de Idioma (Padrão: EN) -->
-  <script>
-    function setLang(lang) {
-      const btnEn = document.getElementById('btn-en');
-      const btnPt = document.getElementById('btn-pt');
-
-      if (lang === 'pt') {
-        document.body.classList.add('show-pt');
-        btnPt.className = 'px-2 py-0.5 rounded bg-emerald-600 text-white font-bold transition';
-        btnEn.className = 'px-2 py-0.5 rounded text-slate-400 font-medium hover:text-white transition';
-      } else {
-        document.body.classList.remove('show-pt');
-        btnEn.className = 'px-2 py-0.5 rounded bg-emerald-600 text-white font-bold transition';
-        btnPt.className = 'px-2 py-0.5 rounded text-slate-400 font-medium hover:text-white transition';
-      }
-    }
-  </script>
 
 </body>
 </html>
